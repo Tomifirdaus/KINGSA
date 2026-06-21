@@ -7,6 +7,7 @@ import {
   Users,       // Ikon untuk Member
   ShoppingBag, // Ikon untuk Pembeli
   X,
+  Menu,        // Ikon untuk tombol pembuka sidebar mobile
   RefreshCw,
   FileCheck,
   Wallet,
@@ -131,17 +132,28 @@ export default function DashboardPage() {
         {/* UTAMA CONTENT */}
         <main className="p-4 md:p-8 space-y-6 md:space-y-8 flex-1 overflow-y-auto">
           
-          {/* HEADER JUDUL HALAMAN */}
-          <div className="space-y-1">
-            <h2 className="text-xl md:text-2xl font-bold text-slate-800 tracking-tight leading-snug">
-              Persentase Keuntungan Produk <span className="text-[#D4AF37]">KINGSA</span>
-            </h2>
-            <p className="text-xs text-slate-400 font-medium">
-              Persentase Keuntungan Produk sajan KINGSA
-            </p>
-            <div className="flex items-center gap-1.5 pt-1">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#2ECC71] inline-block shadow-sm"></span>
-              <span className="text-[11px] font-bold text-slate-600">Aktive system indicator</span>
+          {/* HEADER JUDUL HALAMAN DAN TOMBOL MOBILE */}
+          <div className="flex items-start gap-4">
+            {/* Tombol Buka Sidebar (Hanya muncul di mobile < md) */}
+            <button 
+              onClick={() => setIsSidebarOpen(true)} 
+              className="md:hidden mt-1 p-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 shadow-sm"
+              aria-label="Buka Menu"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+
+            <div className="space-y-1 flex-1">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-800 tracking-tight leading-snug">
+                Persentase Keuntungan Produk <span className="text-[#D4AF37]">KINGSA</span>
+              </h2>
+              <p className="text-xs text-slate-400 font-medium">
+                Persentase Keuntungan Produk sajan KINGSA
+              </p>
+              <div className="flex items-center gap-1.5 pt-1">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#2ECC71] inline-block shadow-sm"></span>
+                <span className="text-[11px] font-bold text-slate-600">Aktive system indicator</span>
+              </div>
             </div>
           </div>
 
